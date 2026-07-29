@@ -8,14 +8,14 @@
   @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
   :root{
-    --steel-900:#17191b;
-    --steel-800:#1f2225;
-    --steel-700:#2b2f33;
-    --concrete-400:#9ca0a6;
-    --concrete-200:#c7cacd;
-    --paper:#f3f2ee;
-    --safety:#f4b400;
-    --safety-dim:#c99200;
+    --red-700:#c81e1e;
+    --red-800:#a51616;
+    --red-900:#7d1010;
+    --ink:#1c1c1c;
+    --line:#e6e2dc;
+    --paper:#ffffff;
+    --paper-off:#faf9f7;
+    --grey-500:#7a7a7a;
   }
 
   *{box-sizing:border-box;}
@@ -23,9 +23,9 @@
   html,body{
     margin:0;
     padding:0;
-    background:var(--steel-900);
+    background:var(--paper-off);
     font-family:'IBM Plex Sans', sans-serif;
-    color:var(--paper);
+    color:var(--ink);
     -webkit-font-smoothing:antialiased;
   }
 
@@ -40,30 +40,31 @@
   .card{
     width:100%;
     max-width:400px;
-    background:var(--steel-800);
-    border:1px solid var(--steel-700);
+    background:var(--paper);
+    border:1px solid var(--line);
     border-radius:4px;
     overflow:hidden;
-    box-shadow:0 30px 60px -20px rgba(0,0,0,0.6);
+    box-shadow:0 30px 60px -25px rgba(0,0,0,0.25);
   }
 
-  /* hazard stripe — signature element */
+  /* hazard stripe — signature element, agora em vermelho/branco */
   .hazard{
     height:10px;
     width:100%;
     background:repeating-linear-gradient(
       135deg,
-      var(--safety) 0px,
-      var(--safety) 14px,
-      var(--steel-900) 14px,
-      var(--steel-900) 28px
+      var(--red-700) 0px,
+      var(--red-700) 14px,
+      var(--paper) 14px,
+      var(--paper) 28px
     );
   }
 
   .header{
     padding:36px 28px 20px;
     text-align:center;
-    border-bottom:1px solid var(--steel-700);
+    background:var(--red-700);
+    color:var(--paper);
   }
 
   .plate{
@@ -72,14 +73,14 @@
     justify-content:center;
     width:64px;
     height:64px;
-    border:2px solid var(--safety);
+    border:2px solid var(--paper);
     border-radius:4px;
     margin-bottom:18px;
     font-family:'Oswald', sans-serif;
     font-size:26px;
     font-weight:700;
     letter-spacing:1px;
-    color:var(--safety);
+    color:var(--paper);
   }
 
   .brand{
@@ -89,6 +90,7 @@
     letter-spacing:0.5px;
     text-transform:uppercase;
     margin:0 0 4px;
+    color:var(--paper);
   }
 
   .role{
@@ -96,7 +98,7 @@
     font-size:11px;
     letter-spacing:2px;
     text-transform:uppercase;
-    color:var(--concrete-400);
+    color:rgba(255,255,255,0.85);
     margin:0;
   }
 
@@ -109,7 +111,7 @@
     font-size:10px;
     letter-spacing:2px;
     text-transform:uppercase;
-    color:var(--safety);
+    color:var(--red-700);
     margin:0 0 12px;
   }
 
@@ -127,23 +129,23 @@
     align-items:center;
     gap:14px;
     padding:12px 4px;
-    border-bottom:1px solid var(--steel-700);
+    border-bottom:1px solid var(--line);
     text-decoration:none;
-    color:var(--paper);
+    color:var(--ink);
     transition:background 0.15s ease;
   }
 
   .contact-item:last-child{ border-bottom:none; }
 
   .contact-item:hover{
-    background:var(--steel-700);
+    background:var(--paper-off);
   }
 
   .icon{
     width:20px;
     height:20px;
     flex-shrink:0;
-    color:var(--safety);
+    color:var(--red-700);
   }
 
   .contact-text{
@@ -158,13 +160,14 @@
     font-size:10px;
     letter-spacing:1.5px;
     text-transform:uppercase;
-    color:var(--concrete-400);
+    color:var(--grey-500);
   }
 
   .contact-value{
     font-size:14px;
     font-weight:500;
     word-break:break-word;
+    color:var(--ink);
   }
 
   .cta-row{
@@ -184,46 +187,46 @@
     letter-spacing:1px;
     text-transform:uppercase;
     text-decoration:none;
-    border:1px solid var(--steel-700);
+    border:1px solid var(--red-700);
     transition:transform 0.15s ease, background 0.15s ease;
   }
 
   .btn-primary{
-    background:var(--safety);
-    color:var(--steel-900);
-    border-color:var(--safety);
-  }
-
-  .btn-primary:hover{ background:var(--safety-dim); transform:translateY(-1px); }
-
-  .btn-secondary{
-    background:transparent;
+    background:var(--red-700);
     color:var(--paper);
   }
 
-  .btn-secondary:hover{ background:var(--steel-700); transform:translateY(-1px); }
+  .btn-primary:hover{ background:var(--red-800); transform:translateY(-1px); }
+
+  .btn-secondary{
+    background:transparent;
+    color:var(--red-700);
+  }
+
+  .btn-secondary:hover{ background:var(--paper-off); transform:translateY(-1px); }
 
   .footer{
     padding:16px 28px 26px;
-    border-top:1px solid var(--steel-700);
+    border-top:1px solid var(--line);
     display:flex;
     align-items:center;
     justify-content:space-between;
     gap:12px;
+    background:var(--paper-off);
   }
 
   .categories{
     font-family:'IBM Plex Mono', monospace;
     font-size:9.5px;
     letter-spacing:0.5px;
-    color:var(--concrete-400);
+    color:var(--grey-500);
     line-height:1.7;
   }
 
   .cnpj{
     font-family:'IBM Plex Mono', monospace;
     font-size:10px;
-    color:var(--concrete-400);
+    color:var(--grey-500);
     white-space:nowrap;
   }
 
@@ -241,7 +244,6 @@
       <div class="plate">L</div>
       <p class="brand">Locard</p>
       <p class="role">Locação de Equipamentos</p>
-      <div class="role">Toque nos ícones para interagir.</div>
     </div>
 
     <div class="body-section">
@@ -260,7 +262,7 @@
           <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.7 3.6 4.9 6.3 6.3l2.1-2.1c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
           <div class="contact-text">
             <span class="contact-label">Telefone</span>
-            <span class="contact-value">(11) 3776-8000 / 3776-8001</span>
+            <span class="contact-value">(11) 3776-8000 / 8001</span>
           </div>
         </a>
 
